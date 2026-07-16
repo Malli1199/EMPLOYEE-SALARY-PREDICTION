@@ -26,7 +26,7 @@ pipeline {
                             bat """
                                 "${scannerHome}\\bin\\sonar-scanner" \
                                 -Dsonar.projectKey=my-local-windows-project \
-                                -Dsonar.projectName="My Local Windows Project" \
+                                -Dsonar.projectName="Employee Project" \
                                 -Dsonar.sources=. \
                                 -Dsonar.token=${SONAR_PASSWORD}
                             """
