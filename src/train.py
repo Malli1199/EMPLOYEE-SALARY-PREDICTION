@@ -8,7 +8,10 @@ from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.metrics import accuracy_score, classification_report
 import joblib
 import os
-
+pipeline = Pipeline([
+    ('scaler', StandardScaler()),
+    ('classifier', LinearDiscriminantAnalysis())
+], memory="cache_folder") # Complian
 def train_and_save_model():
     print("⏳ Starting model training pipeline...")
     
