@@ -8,17 +8,6 @@ pipeline {
                 checkout scm
             }
         }
-
-        stage('Initialize Environment') {
-            steps {
-                sh '''
-                    python3 -m venv ${PYTHON_ENV}
-                    . ${PYTHON_ENV}/bin/activate
-                    pip install --upgrade pip
-                    pip install -r requirements.txt
-                '''
-            }
-        }
         stage('Scan code Quality'){
             steps{
                 withCredentials([String(credentialsId:'sonar-scanner',variable:'SONAR-PASSWORD')]){
